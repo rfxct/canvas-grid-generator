@@ -31,14 +31,9 @@
     cursor: pointer;
 }
 
-#root a {
+#root .result {
     max-width: 100%;
-    height: calc(100% - 80px);
-}
-
-#root a .result {
-    max-width: 100%;
-    max-height: 100%;
+    max-height: calc(100% - 80px);
 }
 
 #root canvas {

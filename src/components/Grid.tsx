@@ -36,7 +36,7 @@ export const Grid: React.FC = () => {
       }
     }
 
-    return canvasRef.current!.toDataURL()
+    return canvasRef.current!.toDataURL('image/jpeg')
   }
 
   useEffect(() => {
@@ -67,15 +67,14 @@ export const Grid: React.FC = () => {
 
       {generating && <span>Gerando grid...</span>}
 
-      <a href={image} download={`grid-${Date.now()}`}>
-        <img
-          className="result"
-          style={{ visibility: generating ? 'hidden' : 'visible' }}
-          ref={resultRef}
-          src={image}
-        />
+      <img
+        className="result"
+        crossOrigin="anonymous"
+        style={{ visibility: generating ? 'hidden' : 'visible' }}
+        ref={resultRef}
+        src={image}
+      />
 
-      </a>
       <canvas ref={canvasRef} />
     </>
 
